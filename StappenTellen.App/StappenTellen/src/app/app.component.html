@@ -1,0 +1,16 @@
+<div>Test</div>
+<!-- <div [formGroup]="form" >
+  <input type="text" formControlName="input" />
+  <div>
+    {{input}}
+  </div>
+</div> -->
+<div >
+  <input type="text" [(ngModel)]="input" /><input type="submit" (click)="calculate()" />
+  <div>
+    {{input}}
+  </div>
+  <div>
+    {{result}}
+  </div>
+</div>
