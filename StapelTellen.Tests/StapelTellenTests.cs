@@ -11,7 +11,7 @@ namespace StapelTellen.Tests
         [InlineData(987, 6)]
         [InlineData(1019292010, 7)]
         [InlineData(3754296418, 4)]
-        public void Test1(uint input, uint expectedResult)
+        public void Test1(long input, long expectedResult)
         {
             var result = Logic.StapelTellen.Calculate(input);
             Assert.Equal(expectedResult, result);

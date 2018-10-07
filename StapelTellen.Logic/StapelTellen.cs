@@ -6,9 +6,9 @@ namespace StapelTellen.Logic
 {
     public class StapelTellen
     {
-        public static uint Calculate(uint input)
+        public static long Calculate(long input)
         {
-            uint result = 0;
+            long result = 0;
             var inputAsString = input.ToString();
             var inputArray = inputAsString.ToCharArray();
 
@@ -26,7 +26,7 @@ namespace StapelTellen.Logic
                 i += 2;
             }
             Console.WriteLine(tempResult);
-            result = uint.Parse(tempResult.ToString());
+            result = long.Parse(tempResult.ToString());
 
             while (result > 9)
             {
