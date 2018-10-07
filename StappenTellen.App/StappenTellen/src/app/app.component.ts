@@ -23,6 +23,10 @@ export class AppComponent {
 
   result: string = this.calculateInternal();
 
+  public generate(){
+    this.input = '123456789';
+  }
+
   public calculate(){
     this.result = this.calculateInternal();
   }
