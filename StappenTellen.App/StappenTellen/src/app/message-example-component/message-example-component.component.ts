@@ -10,12 +10,16 @@ import { Subscription } from 'rxjs';
 export class MessageExampleComponentComponent implements OnInit, OnDestroy {
 
   
-  message: any;
+  message: string[] = [];
   subscription: Subscription;
   
   constructor(private messageService: MessageService) {
     // subscribe to home component messages
-    this.subscription = this.messageService.getMessage().subscribe(message => { this.message = message; });
+    this.message.push('init');
+    this.subscription = this.messageService.getMessage().subscribe(message => { 
+      console.log(message);
+      this.message.push(message);
+    });
   }
 
   ngOnInit() {
