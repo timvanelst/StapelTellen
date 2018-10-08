@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from "@angular/forms";
 import { StapelTellen } from './stapel-tellen';
 import { StapelTellenResult } from './stapel-tellen.result';
 import { Observable, Subject, of } from 'rxjs';
+import { MessageService } from './message-example-component/message-service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,9 @@ export class AppComponent {
   // stapelTellen;
 
   // constructor(private builder: FormBuilder) { }
-  constructor(private stapelTellen: StapelTellen){
+  constructor(
+    private stapelTellen: StapelTellen,
+    private messageService: MessageService){
     // this.stapelTellen = new StapelTellen();
     this.activate();
   }
@@ -83,4 +86,13 @@ export class AppComponent {
     return of('1');
   }
 
+  sendMessage(): void {
+      // send message to subscribers via observable subject
+      this.messageService.sendMessage('Message from Home Component to App Component!');
+  }
+
+  clearMessage(): void {
+      // clear message
+      this.messageService.clearMessage();
+  }
 }
