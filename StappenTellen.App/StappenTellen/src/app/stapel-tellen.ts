@@ -26,13 +26,16 @@ export class StapelTellen {
 
         
         console.log('result.length: ' + result.length);
-        while (result.length > 1)
+        let iteration = 1;
+        while (result.length > 1 || iteration > 10)
         {
             console.log(result)
             let temp  = this.calculate(result);
             console.log(temp);
             result = temp.result;
-            res = temp;
+            temp.steps.forEach(s => res.steps.push(s));
+            res.result = temp.result;
+            iteration++;
         }
 
 
