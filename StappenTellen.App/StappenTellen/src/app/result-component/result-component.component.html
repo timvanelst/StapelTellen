@@ -2,6 +2,6 @@
 <ul>
   <li *ngFor="let step of result.steps">{{step}}</li>
 </ul>
-<div *ngIf="result.subResult != undefined">
-  <app-result-component [result]="result.subResult"></app-result-component>
-</div>
+<!-- <div *ngIf="result.subResult != undefined"> -->
+  <app-result-component [result]="result.subResult" *ngIf="result.subResult"></app-result-component>
+<!-- </div> -->
