@@ -1,17 +1,17 @@
 import { StapelTellenResult } from "./stapel-tellen.result";
-import { Observable, Subject } from "rxjs";
+import { Observable, Subject, of } from "rxjs";
 import { Injectable } from "@angular/core";
 
 @Injectable()
 export class StapelTellen {
+    subject = new Subject<StapelTellenResult>();
 
     public calculate(input: string): Observable<StapelTellenResult> {
-        let subject = new Subject<StapelTellenResult>();
-        console.log(subject);
+        console.log(this.subject);
         this.calculateTemp(input)
             .subscribe(res => {
-                subject.next(res);
-                console.log(subject);
+                this.subject.next(res);
+                console.log(this.subject);
                 let result = res.result;
             });
         
@@ -23,8 +23,8 @@ export class StapelTellen {
             // console.log(result)
             this.calculateTemp(input)
                 .subscribe(temp => {
-                    subject.next(temp);
-                    console.log(subject);
+                    this.subject.next(temp);
+                    console.log(this.subject);
                     // result = temp.result;
                     // res.subResult = temp;
 
@@ -35,17 +35,17 @@ export class StapelTellen {
             iteration++;
         }
 
-        subject.complete();
+        this.subject.complete();
 
         // return result;
         // res.result = result;
         // console.log('result: ' + res.result);
-        console.log(subject);
-        return subject;
+        console.log(this.subject);
+        return this.subject;
     }
 
+    tempResult = new Subject<StapelTellenResult>();
     private calculateTemp(input: string): Observable<StapelTellenResult> {
-        let subject = new Subject<StapelTellenResult>();
 
         // console.log('input: ' + input);
         let i = 0;
@@ -65,8 +65,9 @@ export class StapelTellen {
         }
         res.result = result;
         console.log(res);
-        subject.next(res);
-        subject.complete();
-        return subject;
+        this.tempResult.next(res);
+        this.tempResult.complete();
+        // return this.tempResult;
+        return of(res);
     }
 }
