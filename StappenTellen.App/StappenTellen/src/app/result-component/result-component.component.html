@@ -1,0 +1,7 @@
+<h3>Resultaat: {{result.result}}</h3>
+<ul>
+  <li *ngFor="let step of result.steps">{{step}}</li>
+</ul>
+<div *ngIf="result.subResult != undefined">
+  <app-result-component [result]="result.subResult"></app-result-component>
+</div>

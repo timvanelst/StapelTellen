@@ -8,10 +8,5 @@
 <div >
   <input type="button" (click)="generate()" value="Genereer" />
   <input type="text" [(ngModel)]="input" /><input type="submit" (click)="calculate()" />
-  <div>
-    Resultaat: {{result.result}}
-  </div>
-  <div>
-    Steps: {{ result.steps }}
-  </div>
+  <app-result-component [result]="result"></app-result-component>
 </div>

@@ -15,7 +15,7 @@ export class AppComponent {
   constructor(){
     this.stapelTellen = new StapelTellen();
   }
-  input: string = '123';
+  input: string = '1234';
 
   // form = this.builder.group({
   //   input: ['']
