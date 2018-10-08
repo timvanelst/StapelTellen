@@ -8,5 +8,11 @@
 <div >
   <input type="button" (click)="generate()" value="Genereer" />
   <input type="text" [(ngModel)]="input" /><input type="submit" (click)="calculate()" />
-  <app-result-component [result]="result"></app-result-component>
+  <app-result-component [result]="result" *ngIf="result"></app-result-component>
+  <p>
+    {{ result | json }}
+  </p>
+  <p>
+    Value: {{ value }}
+  </p>
 </div>
