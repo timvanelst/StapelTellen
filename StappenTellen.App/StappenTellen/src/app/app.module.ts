@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { ResultComponentComponent } from './result-component/result-component.component';
 import { StapelTellen } from './stapel-tellen';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,8 @@ import { StapelTellen } from './stapel-tellen';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     StapelTellen
