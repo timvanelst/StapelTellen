@@ -1,9 +1,13 @@
 import { StapelTellenResult } from "./stapel-tellen.result";
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class StapelTellen {
 
-    public calculate(input: string): StapelTellenResult {
+    public calculate(input: string): StapelTellenResult[] {
+        let array: StapelTellenResult[] = [];
         let res = this.calculateTemp(input);
+        array.push(res);
         let result = res.result;
         
         // console.log('result.length: ' + result.length);
@@ -12,6 +16,7 @@ export class StapelTellen {
         {
             // console.log(result)
             let temp  = this.calculateTemp(result);
+            array.push(temp);
             // console.log(temp);
             result = temp.result;
             // temp.steps.forEach(s => res.steps.push(s));
@@ -24,7 +29,7 @@ export class StapelTellen {
         // return result;
         // res.result = result;
         // console.log('result: ' + res.result);
-        return res;
+        return array;
     }
 
     private calculateTemp(input: string) {

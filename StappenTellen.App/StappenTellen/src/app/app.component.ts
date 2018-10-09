@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from "@angular/forms";
 import { StapelTellen } from './stapel-tellen';
+import { StapelTellenResult } from './stapel-tellen.result';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +10,11 @@ import { StapelTellen } from './stapel-tellen';
 })
 export class AppComponent {
   title = 'app';
-  stapelTellen;
+  // stapelTellen;
 
   // constructor(private builder: FormBuilder) { }
-  constructor(){
-    this.stapelTellen = new StapelTellen();
+  constructor(private stapelTellen: StapelTellen){
+    // this.stapelTellen = new StapelTellen();
   }
   input: string = '1234';
 
@@ -21,7 +22,7 @@ export class AppComponent {
   //   input: ['']
   // });
 
-  result: string = this.calculateInternal();
+  result: StapelTellenResult[] = this.calculateInternal();
 
   public generate(){
     this.input = '123456789';
@@ -31,12 +32,12 @@ export class AppComponent {
     this.result = this.calculateInternal();
   }
 
-  private calculateInternal(): string {
+  private calculateInternal(): StapelTellenResult[] {
     if(this.input != ''){
-      this.stapelTellen = new StapelTellen();
+      // this.stapelTellen = new StapelTellen();
       return this.stapelTellen.calculate(this.input);
     }
 
-    return '';
+    return [];
   }
 }

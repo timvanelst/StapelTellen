@@ -10,7 +10,7 @@ export class ResultComponentComponent implements OnInit {
 
   constructor() { }
   @Input()
-  result: StapelTellenResult;
+  result: StapelTellenResult[];
 
   ngOnInit() {
   }

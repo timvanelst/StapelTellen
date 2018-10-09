@@ -1,7 +1,10 @@
-<h3>Resultaat: {{result.result}}</h3>
-<ul>
-  <li *ngFor="let step of result.steps">{{step}}</li>
-</ul>
-<!-- <div *ngIf="result.subResult != undefined"> -->
-  <app-result-component [result]="result.subResult" *ngIf="result.subResult"></app-result-component>
-<!-- </div> -->
+<div *ngFor="let res of result">
+  <h3>Resultaat: {{res.result}}</h3>
+  <!-- {{ res | json }} -->
+  <ul>
+    <li *ngFor="let step of res.steps">{{step}}</li>
+  </ul>
+  <!-- <div *ngIf="result.subResult != undefined"> -->
+    <!-- <app-result-component [result]="res.subResult" *ngIf="res.subResult"></app-result-component> -->
+    <!-- </div> -->
+</div>
