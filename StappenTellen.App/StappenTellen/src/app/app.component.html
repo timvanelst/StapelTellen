@@ -7,6 +7,6 @@
 </div> -->
 <div >
   <input type="button" (click)="generate()" value="Genereer" />
-  <input type="text" [(ngModel)]="input" /><input type="submit" (click)="calculate()" />
+  <input type="number" [(ngModel)]="input" /><input type="submit" (click)="calculate()" />
   <app-result-component [result]="result"></app-result-component>
 </div>

@@ -35,7 +35,7 @@ export class AppComponent {
   private calculateInternal(): StapelTellenResult[] {
     if(this.input != ''){
       // this.stapelTellen = new StapelTellen();
-      return this.stapelTellen.calculate(this.input);
+      return this.stapelTellen.calculate(this.input.toString());
     }
 
     return [];
