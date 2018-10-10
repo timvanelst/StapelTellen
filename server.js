@@ -1,7 +1,7 @@
 "use strict";
 exports.__esModule = true;
-// require("es6-shim");
-require("reflect-metadata");
+require("es6-shim");
+// require("reflect-metadata");
 var path = require("path");
 var bodyParser = require("body-parser");
 var moment = require("moment");
