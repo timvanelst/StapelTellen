@@ -50,7 +50,7 @@ export class StapelTellen {
             i += 2;
         }
         res.result = result;
-        console.log(res);
+        // console.log(res);
         return res;
     }
 }

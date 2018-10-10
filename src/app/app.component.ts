@@ -26,11 +26,20 @@ export class AppComponent implements OnInit {
   //   input: ['']
   // });
 
-  result: StapelTellenResult[] = this.calculateInternal();
+  result: StapelTellenResult[] = [];
 
   public generate(){
     let random = RandomNumberGenerator.getRandomNumber();
     this.input = random.toString();
+    this.clearResult();
+  }
+
+  onKey(event: any) { 
+    this.clearResult();
+  }
+
+  public clearResult() {
+    this.result = [];
   }
 
   public calculate(){
