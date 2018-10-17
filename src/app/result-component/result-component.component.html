@@ -1,5 +1,5 @@
 <div class="toggleShowSteps">
-  <input type="button" *ngIf="result.length != 0" value="Toon/ verberg berekening" (click)="toggleShowSteps()" class="btn" />
+  <button type="button" *ngIf="result.length != 0" (click)="toggleShowSteps()" [ngClass]="{'btn': true, 'btn-dark': showSteps, 'btn-light': !showSteps }   " >{{ (showSteps) ? 'Verberg' : 'Toon'}} berekening</button>
 </div>
 
 <div *ngFor="let res of result" class="card results">
