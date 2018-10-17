@@ -11,8 +11,13 @@ export class ResultComponentComponent implements OnInit {
   constructor() { }
   @Input()
   result: StapelTellenResult[];
+  showSteps: boolean = false;
 
   ngOnInit() {
+  }
+
+  toggleShowSteps() {
+    this.showSteps = !this.showSteps;
   }
 
 }
