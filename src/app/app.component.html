@@ -4,14 +4,12 @@
           <h2>Stapeltellen</h2>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm-3">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
       <input type="button" (click)="generate()" value="Nieuw" class="btn"/>
     </div>
-    <div class="col-sm-6">
-      <input type="number" [(ngModel)]="input" (keyup)="onKey($event)" (change)="clearResult()" class="form-control" />
-    </div>
-    <div class="col-sm-3">
+    <input type="number" [(ngModel)]="input" (keyup)="onKey($event)" (change)="clearResult()" class="form-control" />
+    <div class="input-group-apend">
       <input type="button" (click)="calculate()" value="Reken uit!" class="btn btn-primary" />
     </div>
   </div>
