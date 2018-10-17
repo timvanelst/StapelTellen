@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { StapelTellenResult } from '../stapel-tellen.result';
+import { bootstrap } from '../../../node_modules/bootstrap';
 
 @Component({
   selector: 'app-result-component',
