@@ -1,10 +1,8 @@
-<div *ngFor="let res of result">
-  <h3>Resultaat: {{res.result}}</h3>
-  <!-- {{ res | json }} -->
-  <ul>
-    <li *ngFor="let step of res.steps">{{step}}</li>
-  </ul>
-  <!-- <div *ngIf="result.subResult != undefined"> -->
-    <!-- <app-result-component [result]="res.subResult" *ngIf="res.subResult"></app-result-component> -->
-    <!-- </div> -->
+<div *ngFor="let res of result" class="card results">
+  <div class="card-header">Resultaat: {{res.result}}</div>
+  <div class="card-body steps">
+      <ul>
+        <li *ngFor="let step of res.steps">{{step}}</li>
+      </ul>
+    </div>
 </div>

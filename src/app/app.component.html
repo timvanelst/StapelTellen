@@ -1,12 +1,23 @@
-<h2>Stapeltellen</h2>
-<!-- <div [formGroup]="form" >
-  <input type="text" formControlName="input" />
-  <div>
-    {{input}}
+  <div class="container">
+    <div class="row">
+      <div class="col">
+          <h2>Stapeltellen</h2>
+    </div>
   </div>
-</div> -->
-<div >
-  <input type="button" (click)="generate()" value="Nieuw" />
-  <input type="number" [(ngModel)]="input" (keyup)="onKey($event)" (change)="clearResult()" /><input type="submit" (click)="calculate()" value="Reken uit!" />
-  <app-result-component [result]="result"></app-result-component>
+  <div class="row">
+    <div class="col-sm-3">
+      <input type="button" (click)="generate()" value="Nieuw" class="btn"/>
+    </div>
+    <div class="col-sm-6">
+      <input type="number" [(ngModel)]="input" (keyup)="onKey($event)" (change)="clearResult()" class="form-control" />
+    </div>
+    <div class="col-sm-3">
+      <input type="button" (click)="calculate()" value="Reken uit!" class="btn btn-primary" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-result-component [result]="result"></app-result-component>
+    </div>
+  </div>
 </div>
