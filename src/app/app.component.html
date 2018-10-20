@@ -1,20 +1,16 @@
-  <div class="container">
-    <div class="row">
-      <div class="col">
-          <h2>Stapeltellen</h2>
-    </div>
-  </div>
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <input type="button" (click)="generate()" value="Nieuw" class="btn"/>
-    </div>
-    <input type="number" [(ngModel)]="input" (keyup)="onKey($event)" (change)="clearResult()" class="form-control" />
-    <div class="input-group-apend">
-      <input type="button" (click)="calculate()" value="Reken uit!" class="btn btn-primary" />
-    </div>
-  </div>
+<div class="container-fluid">
   <div class="row">
-    <div class="col">
+    <div class="col-md-4">
+        <h2>Stapeltellen</h2>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <input type="button" (click)="generate()" value="Nieuw" class="btn"/>
+          </div>
+          <input type="number" [(ngModel)]="input" (keyup)="onKey($event)" (change)="clearResult()" class="form-control" />
+          <div class="input-group-apend">
+            <input type="button" (click)="calculate()" value="Reken uit!" class="btn btn-primary" />
+          </div>
+        </div>
       <app-result-component [result]="result"></app-result-component>
     </div>
   </div>

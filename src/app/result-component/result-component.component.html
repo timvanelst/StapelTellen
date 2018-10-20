@@ -1,16 +1,15 @@
 <div class="toggleShowSteps">
-  <button type="button" *ngIf="result.length != 0" (click)="toggleShowSteps()" [ngClass]="{'btn': true, 'btn-dark': showSteps, 'btn-light': !showSteps }   " >{{ (showSteps) ? 'Verberg' : 'Toon'}} berekening</button>
+  <span *ngIf="result.length != 0 && !showSteps" (click)="toggleShowSteps()" >
+    <fa name="toggle-off" class="fa-lg" title="Toon berekening"></fa>
+  </span>
+  <span *ngIf="result.length != 0 && showSteps" (click)="toggleShowSteps()" >
+    <fa name="toggle-on" class="fa-lg" title="Verberg berekening" ></fa>
+  </span>
 </div>
 
 <div *ngFor="let res of result" class="card results">
-  <div class="card-header container" (click)="toggleShowSteps()">
-    <div class="row">
-      <div class="col-sm-8">
-        Resultaat: {{res.result}}
-      </div>
-      <div class="col-sm-8">
-      </div>
-    </div>
+  <div class="card-header" (click)="toggleShowSteps()">
+    Resultaat: {{res.result}}
   </div>
   <div class="card-body steps" *ngIf="showSteps">
     <ul>
